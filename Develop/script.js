@@ -41,8 +41,8 @@ var length = " ";
     }
 
     //Checks if all are false
-    if (lowerOp && upperOp && numberOp && specialOp == null) {
-      alert("you must select one type.")
+    if (lowerOp == false && upperOp == false && numberOp == false && specialOp == false) {
+      alert("You must select one type.")
     }
 
   } 
