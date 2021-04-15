@@ -1,16 +1,16 @@
 // Assignment Code
-
-var lower ="abcdefghijklmnopqrstuvwxyz";
+function generatePassword(){
+var lower = "abcdefghijklmnopqrstuvwxyz";
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var number = "0123456789";
 var special = "!#$%&'()*+,-./:;<=>?@[^_`{|}~";
 
-var lowerOp;  
-var upperOp;
-var numberOp;
-var specialOp;
-
-function generatePassword(){
+var lowerOp = false;  
+var upperOp = false;
+var numberOp = false;
+var specialOp = false;
+var random = '';
+var randomPass = '';
   var length = " ";
   while (length < 8 || length > 128 ) {
     length = prompt("How long do you want your password to be? (8-128 charcters)"); 
@@ -21,34 +21,37 @@ function generatePassword(){
   if (length){ 
     if (confirm("Do you want lowercase letters?") == true) {
       random += lower;
+      lowerOp = true;
     }
 
     if(confirm("Do you want uppercase letters?") == true ) {
       random += upper; 
+      upperOp = true;
     }
 
     if(confirm("Do you want numbers?") == true ) {
       random += number; 
+      numberOp = true;
     }
     if(confirm("Do you want special characters?") == true){
-      random += special; 
+      random += special;
+      specialOp = true; 
     }
 
     //Checks if all are false
-    if (!lowerOp && !upperOp && !numberOp && !specialOp) {
+    if (lowerOp && upperOp && numberOp && specialOp == null) {
       alert("you must select one type.")
     }
+
   } 
     
-  var random = '';
-  var randomPass = '';
+  
   for(var i = 0; i < length; i++) {
     
     randomPass += random[Math.floor(Math.random() * random.length)];
-    
+    console.log(Math.floor(Math.random() * random.length));
   }
-
-  
+  return randomPass;
   
 
     
