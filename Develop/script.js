@@ -9,9 +9,11 @@ var lowerOp = false;
 var upperOp = false;
 var numberOp = false;
 var specialOp = false;
+
 var random = '';
 var randomPass = '';
-  var length = " ";
+var length = " ";
+
   while (length < 8 || length > 128 ) {
     length = prompt("How long do you want your password to be? (8-128 charcters)"); 
     if (length === null){
@@ -47,7 +49,7 @@ var randomPass = '';
     
   
   for(var i = 0; i < length; i++) {
-    
+    //Randomizes password
     randomPass += random[Math.floor(Math.random() * random.length)];
     console.log(Math.floor(Math.random() * random.length));
   }
