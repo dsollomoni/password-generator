@@ -14,6 +14,7 @@ var random = '';
 var randomPass = '';
 var length = " ";
 
+  // Prompts user to input information
   while (length < 8 || length > 128 ) {
     length = prompt("How long do you want your password to be? (8-128 charcters)"); 
     if (length === null){
